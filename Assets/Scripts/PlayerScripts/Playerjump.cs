@@ -8,7 +8,7 @@ public class Playerjump : MonoBehaviour {
     [SerializeField]
     private AudioClip jumpClip;
 
-    private float jumpForce = 8f, forwardForce = 0f;
+    public float jumpForce = 10f, forwardForce = 0f;
 
     private Rigidbody2D myBody;
 
@@ -19,8 +19,8 @@ public class Playerjump : MonoBehaviour {
     void Awake()
     {
         myBody = GetComponent<Rigidbody2D>();
-        jumpBtn = GameObject.Find("Jump Button").GetComponent<Button>();
-        jumpBtn.onClick.AddListener(() => Jump());
+      //  jumpBtn = GameObject.Find("Jump Button").GetComponent<Button>();
+       // jumpBtn.onClick.AddListener(() => Jump());
     }
     
 	// Update is called once per frame
@@ -40,7 +40,7 @@ public class Playerjump : MonoBehaviour {
             canJump = false;
             if (transform.position.x < 0)
             {
-                forwardForce = 1f;
+                forwardForce = 2f;
             }
             else
             {
